@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Surprise - Zara Scam</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px;
+            background: #fff;
+            border: 3px solid #0056b3;
+            border-radius: 12px;
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+        }
+        .dialog {
+            display: none;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+        }
+        .buttons {
+            margin-top: 25px;
+            text-align: center;
+        }
+        .buttons button {
+            padding: 12px 28px;
+            margin: 10px;
+            border: 3px solid #0056b3;
+            border-radius: 8px;
+            cursor: pointer;
+            background-color: #0056b3;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+        .buttons button:hover {
+            background-color: #003f7f;
+        }
+        #finalMessage {
+            display: none;
+            font-size: 1.3em;
+            color: #444;
+            text-align: left;
+        }
+        .scam-title {
+            font-size: 3em;
+            color: #e60000;
+            margin-bottom: 25px;
+        }
+        .scam-warning {
+            font-size: 1.6em;
+            color: #ff6600;
+            text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+        }
+        .logo {
+            font-size: 4em;
+            color: #0056b3;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+        .animated-title {
+            animation: bounce 1.5s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #0056b3;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <div class="container">
+        <div id="welcomeScreen" class="dialog scam-title logo">
+            <p class="animated-title">Welcome to the Exclusive Zara Clearance Sale! Click here to continue.</p>
+            <button onclick="showItemSelection()">Click Here to Continue</button>
+        </div>
+
+        <div id="itemSelection" class="dialog scam-warning">
+            <p>Here are the clearance sale items! Choose an item:</p>
+            <ul>
+                <li>Zara Perfume Orchid - Php.3,500</li>
+                <li>Zara Perfume Fragrance - Php.4,000</li>
+                <li>Zara Dress - Php.5,000</li>
+                <li>Zara Shoes - Php.3,800</li>
+                <li>Zara Handbag - Php.4,500</li>
+            </ul>
+            <div class="buttons">
+                <button class="proceed" onclick="showProceedConfirmation()">Proceed to Payment</button>
+                <button class="cancel" onclick="cancelPurchase()">Cancel</button>
+            </div>
+        </div>
+
+        <div id="proceedConfirmation" class="dialog scam-warning">
+            <p>Are you really sure you want to proceed?</p>
+            <div class="buttons">
+                <button class="yes" onclick="showFinalStep()">Yes</button>
+                <button class="no" onclick="cancelPurchase()">No</button>
+            </div>
+        </div>
+
+        <div id="paymentProcessing" class="dialog scam-warning">
+            <p>Payment processing, please wait...</p>
+            <button onclick="showFinalMessage()">View Details</button>
+        </div>
+
+        <div id="finalMessage">
+            <p><strong>Surprise! 🥰</strong></p>
+            <p>Hello baby, Good morning, i am sorry for what happened last night, i know i acted differently, i know pagod ka na marinig sakin to, but ill say it again, ill be better baby, i always make sure na magiging better ako bcs its the only way to make things right with you. and i wanna give you the best version of myself din. im sorry if i made you feel that way like i wasn't considering your feelings, im really sorry. Please give me a chance to make it up to you, ill do everything whatever it takes just to make it right between us. You mean so much to me, so special to me na, and i cant afford to lose you, i love you bigtime. You my princess, wife, girlfriend, best friend, MY EVERYTHING. Dont think na someday i might give up or what? NO. tru ups and downs im here baby always, i wanna do life with you, even build my own career but with you, by my side. Goddddd i'm so grateful that i met you. don't blame yourself bcs of your traumas or not healed yet, no. May good things akong natututunan bcs of you. I'm learning baby how to handle, manage time, handle our fights, so that in the future i know how to handle it na, thank you baby. I knew na worth it ka. I love you baby !!!. ❤️</p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Special Surprise. All rights reserved.
+    </footer>
+
+    <script>
+        const welcomeScreen = document.getElementById("welcomeScreen");
+        const itemSelection = document.getElementById("itemSelection");
+        const proceedConfirmation = document.getElementById("proceedConfirmation");
+        const paymentProcessing = document.getElementById("paymentProcessing");
+        const finalMessage = document.getElementById("finalMessage");
+
+        // Show the welcome screen on page load
+        window.onload = () => {
+            welcomeScreen.style.display = "block";
+        };
+
+        function showItemSelection() {
+            welcomeScreen.style.display = "none";
+            itemSelection.style.display = "block";
+        }
+
+        function showProceedConfirmation() {
+            itemSelection.style.display = "none";
+            proceedConfirmation.style.display = "block";
+        }
+
+        function cancelPurchase() {
+            proceedConfirmation.style.display = "none";
+            paymentProcessing.style.display = "block";
+        }
+
+        function showFinalStep() {
+            proceedConfirmation.style.display = "none";
+            paymentProcessing.style.display = "block";
+        }
+
+        function showFinalMessage() {
+            paymentProcessing.style.display = "none";
+            finalMessage.style.display = "block";
+        }
+    </script>
+</body>
+</html>
